@@ -1,0 +1,28 @@
+# Site settings
+title: Transaction Fraud Detection System
+description: A Project by Tanishqa Aggarwal and Shreevatsa Agnihotri
+
+# Jekyll Slate Theme (OFFICIAL METHOD)
+theme: jekyll-theme-slate
+
+# Plugins (REQUIRED for remote_theme)
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# GitHub Pages settings
+baseurl: "/transaction-fraud-detection-system"
+url: "https://data-v-labs.github.io"
+
+# Markdown processor
+markdown: kramdown
+
+# Build settings
+exclude:
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE

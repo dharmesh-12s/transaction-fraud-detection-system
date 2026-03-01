@@ -1,0 +1,201 @@
+---
+---
+
+/* 1. Import the original Slate theme */
+@import "{{ site.theme }}";
+
+/* =========================================
+   1. LAYOUT & WHITESPACE
+   ========================================= */
+.inner {
+    max-width: 1000px !important; 
+    width: 70% !important;        /* NARROWER content = MORE white space on sides */
+    margin: 0 auto;
+}
+
+#header_wrap .inner, 
+#main_content_wrap .inner {
+    max-width: 1000px !important;
+    width: 70% !important;
+}
+
+/* =========================================
+   2. GLOBAL FONTS & COLORS
+   ========================================= */
+
+/* Body Text - Clean Sans-Serif, White BG, Dark Text */
+body {
+    /* Font family removed to revert to original theme font */
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    color: #333 !important;
+    background-color: #fff !important; 
+}
+
+/* Headings -> DARK */
+#main_content_wrap h1, 
+#main_content_wrap h2, 
+#main_content_wrap h3, 
+#main_content_wrap h4, 
+#main_content_wrap h5, 
+#main_content_wrap h6 {
+    /* Font family removed to revert to original theme font */
+    font-weight: 600 !important;
+    color: #333 !important;
+    margin-top: 1.5em !important;
+}
+
+/* Headings inside Header -> WHITE */
+#header_wrap h1, 
+#header_wrap h2 {
+    /* Font family removed to revert to original theme font */
+    color: #fff !important;
+    margin-top: 0 !important;
+}
+
+/* Code Blocks (Global fallback) */
+pre, code, .highlight {
+    /* Font family removed to revert to original theme font */
+    font-size: 13px !important;
+}
+
+/* =========================================
+   3. JUPYTER / COLAB STYLE (PYTHON ONLY)
+   ========================================= */
+
+/* 1. Reset the Code Block Background to Light Grey */
+.language-python pre,
+.language-python .highlight {
+    background-color: #f7f7f7 !important; /* Jupyter standard light grey */
+    border: 1px solid #cfcfcf;             /* Subtle border */
+    border-radius: 2px;
+    padding: 10px;
+}
+
+/* 2. Reset the Base Text Color to Black */
+.language-python code, 
+.language-python pre {
+    color: #333 !important;
+    font-family: Consolas, monospace !important;
+    font-size: 13px !important;
+    text-shadow: none !important; /* Remove Slate's text shadow */
+}
+
+/* 3. Syntax Highlighting - Replicating the 'ipython' Pygments style */
+
+/* Keywords (def, return, if, else) -> Bold Green */
+.language-python .k, .language-python .kd, .language-python .kn, 
+.language-python .kp, .language-python .kr, .language-python .kt {
+    color: #008000 !important;
+    font-weight: bold !important;
+}
+
+/* Builtins (print, range) -> Green */
+.language-python .nb { color: #008000 !important; }
+
+/* Comments (# ...) -> Italic Teal */
+.language-python .c, .language-python .cm, .language-python .cp, 
+.language-python .c1, .language-python .cs {
+    color: #408080 !important;
+    font-style: italic !important;
+}
+
+/* Strings ("...", '...') -> Red */
+.language-python .s, .language-python .sb, .language-python .sc, 
+.language-python .sd, .language-python .s2, .language-python .se, 
+.language-python .sh, .language-python .si, .language-python .sx, 
+.language-python .sr, .language-python .s1, .language-python .ss {
+    color: #BA2121 !important;
+}
+
+/* Numbers (1, 2.5) -> Green */
+.language-python .m, .language-python .mf, .language-python .mh, 
+.language-python .mi, .language-python .mo, .language-python .il {
+    color: #008000 !important;
+}
+
+/* Operators (+, -, =, :) -> Purple */
+.language-python .o, .language-python .ow {
+    color: #AA22FF !important;
+    font-weight: bold !important;
+}
+
+/* Functions/Classes (MyClass, my_func) -> Blue */
+.language-python .nf, .language-python .nc { color: #0000FF !important; }
+
+/* Decorators (@wrapper) -> Purple */
+.language-python .nd { color: #AA22FF !important; }
+
+/* Instance variables (self) -> Dark Grey/Black (default) */
+.language-python .bp { color: #008000 !important; }
+
+/* =========================================
+   4. TABLE FIXES
+   ========================================= */
+
+.colab-df-container {
+    display: block !important;    
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1.5em;
+    border: 1px solid #ddd;       
+    background: #fff;             
+}
+
+.table-wrapper {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    border: 1px solid #ddd;
+    background: #fff; 
+}
+
+table, .dataframe {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap; 
+    color: #333;
+    font-size: 13px !important;
+}
+
+table th, table td, .dataframe th, .dataframe td {
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    text-align: right;
+}
+
+table th {
+    font-weight: bold;
+    background-color: #f9f9f9;
+    color: #333 !important; 
+}
+
+.colab-df-buttons, .colab-df-convert {
+    display: none !important;
+}
+
+/* =========================================
+   5. UI ELEMENT HIDING
+   ========================================= */
+
+#forkme_banner {
+    display: none !important;
+}
+
+/* =========================================
+   6. MARKDOWN IMAGE SIZING FIX
+   ========================================= */
+
+/* This targets images added as ![png](...) 
+   It increases their size and centers them.
+*/
+img[alt="png"] {
+    width: 100% !important;      /* Makes the image take up the full column width */
+    max-width: 950px !important; /* Cap it so it doesn't get distorted on huge screens */
+    height: auto !important;     /* Keeps the aspect ratio correct */
+    display: block;
+    margin: 20px auto;           /* Centers the image */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Adds a nice shadow pop */
+}
