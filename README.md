@@ -130,7 +130,7 @@ transaction-fraud-detection-system/
 
 ## Authors
 
-**Tanishqa Aggarwal, Shreevatsa Agnihotri, Dharmesh Sharma**
+**Dharmesh Sharma**
 
 ---
 
